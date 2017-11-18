@@ -110,6 +110,9 @@ class Common(Configuration):
 
     AUTH_USER_MODEL = 'users.User'
 
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 class Development(Common):
     """
@@ -126,7 +129,6 @@ class Development(Common):
     MIDDLEWARE = Common.MIDDLEWARE + [
         'debug_toolbar.middleware.DebugToolbarMiddleware'
     ]
-
 
 class Staging(Common):
     """
