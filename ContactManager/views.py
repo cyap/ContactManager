@@ -1,4 +1,9 @@
 from django.shortcuts import render
 
+from .forms import ContactForm
+
 def index(request):
-	return render(request, "base.html", {})
+	return render(request, "index.html", {
+		'contact_form':ContactForm()
+	})
+	

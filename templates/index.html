@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-Hello World!
+  <div id=contact-submission>
+    <form method="POST">
+	  <table id="contact-submission-form">
+	    {{ contact_form.as_table }}
+	  </table>
+    </form>
+    <p>Test: [[ contact.first_name ]]</p>
+  </div>
 {% endblock %}
