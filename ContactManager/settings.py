@@ -35,8 +35,9 @@ class Common(Configuration):
 
         'django_extensions',
         'debug_toolbar',
-
-        'ContactManager.users',
+		
+		'ContactManager',
+        'ContactManager.users'
     ]
 
     MIDDLEWARE = [
