@@ -3,6 +3,15 @@ label {
 	margin-bottom: 0px;
 }
 
+td {
+	display: flex;
+}
+
 td, th {
 	padding: 1px;
 }
+
+td > input, select {
+	flex: 2;
+}
+
