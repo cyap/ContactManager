@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div id=contact-list>
+    <table>
+    </table>
+  </div>
+  
   <div id=contact-submission>
     <form method="POST">
-	  <table id="contact-submission-form">
-	    {{ contact_form.as_table }}
+      {% csrf_token %}
+	  <table>
+	    {% for field in contact_form %}
+		  <tr>
+		    <th>{{ field.label_tag }}</th>
+		    <td class="field-cell">{{ field }}</td>
+			<td>
+			  <span class="bg-danger">[[ errors.{{ field.name }} ]]</span>
+			</td>
+		  </tr>
+	    {% endfor %}
 	  </table>
+	  
+	  <input class="btn btn-xs" type="submit" v-on:click="add_contact">
     </form>
-    <p>Test: [[ contact.first_name ]]</p>
+    <p>Test: [[ errors.address ]]</p>
+    <p>Test: [[ contact.birthdate.month ]]</p>
   </div>
 {% endblock %}
