@@ -26,9 +26,9 @@ class ContactForm(forms.ModelForm):
 			'phone_number', 'email']
 		widgets = {
 			'birthdate': CustomDateWidget(
-				attrs_month={'v-model':'contact.birthdate.month'},
-				attrs_day={'v-model':'contact.birthdate.day'},
-				attrs_year={'v-model':'contact.birthdate.year'}
+				attrs_month={'v-model':'form_birthdate.month'},
+				attrs_day={'v-model':'form_birthdate.day'},
+				attrs_year={'v-model':'form_birthdate.year'}
 			),
 			'phone_number': forms.TextInput(attrs={
 				'placeholder':'e.g. 1800444555'
