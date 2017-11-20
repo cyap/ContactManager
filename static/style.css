@@ -3,15 +3,22 @@ label {
 	margin-bottom: 0px;
 }
 
-td {
-	display: flex;
-}
-
 td, th {
 	padding: 1px;
+}
+
+.field-cell {
+	display:flex;
 }
 
 td > input, select {
 	flex: 2;
 }
 
+form {
+	display: inline-block;
+}
+
+input[type=submit] {
+	width:100%;
+}
